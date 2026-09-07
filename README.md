@@ -75,7 +75,7 @@ Ejecuta el servidor con Uvicorn:
 uvicorn main:app --reload
 ```
 
-El servidor estará corriendo en http://127.0.0.1:8000.
+El servidor estará corriendo en `http://127.0.0.1:8000`.
 
 3. Ejecutar el Frontend
 Abre el archivo frontend/index.html en tu navegador (o utiliza la extensión Live Server en VS Code).
