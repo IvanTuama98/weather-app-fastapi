@@ -44,3 +44,38 @@ Una aplicación web fullstack para consultar el clima en tiempo real de cualquie
 ```bash
 git clone https://github.com/IvanTuama98/weather-app-fastapi.git
 cd weather-app-fastapi
+```
+
+2. **Configurar el Backend**
+Crea un entorno virtual e instala las dependencias:
+
+```bash
+python -m venv venv
+```
+# En Windows:
+```bash
+venv\Scripts\activate
+```
+# En Mac/Linux:
+```bash
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+Crea un archivo .env en la raíz con tu clave de OpenWeatherMap:
+
+```bash
+OPENWEATHER_API_KEY=tu_api_key_aqui
+```
+
+Ejecuta el servidor con Uvicorn:
+
+```bash
+uvicorn main:app --reload
+```
+
+El servidor estará corriendo en http://127.0.0.1:8000.
+
+3. Ejecutar el Frontend
+Abre el archivo frontend/index.html en tu navegador (o utiliza la extensión Live Server en VS Code).
