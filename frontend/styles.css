@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eef2f5;
+}
+
+main{
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Crea un espacio uniforme entre el título, el input y el botón */
+}
+
+input, button {
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3; /* Cambia de color al pasar el mouse */
+}
+
+#resultado-clima {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#resultado-clima h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#resultado-clima .temperatura {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+#resultado-clima .descripcion {
+    text-transform: capitalize; /* Pone la primera letra en mayúscula ("Algo de nubes") */
+    color: #666;
+}
