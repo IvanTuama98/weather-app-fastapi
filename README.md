@@ -46,7 +46,7 @@ git clone https://github.com/IvanTuama98/weather-app-fastapi.git
 cd weather-app-fastapi
 ```
 
-2. **Configurar el Backend**
+### **2. Configurar el Backend**
 Crea un entorno virtual e instala las dependencias:
 
 ```bash
@@ -77,5 +77,5 @@ uvicorn main:app --reload
 
 El servidor estará corriendo en `http://127.0.0.1:8000`.
 
-3. Ejecutar el Frontend
+### **3. Ejecutar el Frontend**
 Abre el archivo frontend/index.html en tu navegador (o utiliza la extensión Live Server en VS Code).
