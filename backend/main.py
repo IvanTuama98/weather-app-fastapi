@@ -33,13 +33,21 @@ async def clima(ciudad: str):
     async with httpx.AsyncClient() as client:
         response = await client.get("https://api.openweathermap.org/data/2.5/weather", params=data)
         datos_clima = response.json()
-        if response.status_code != 200:
-            raise HTTPException(status_code=404, detail="Ciudad no encontrada")
-        else:
+        codigo = response.status_code
+
+        if codigo == 200:
             datos_filtrados = {
-                "ciudad": datos_clima["name"],
-                "temperatura": datos_clima["main"]["temp"],
-                "descripcion": datos_clima["weather"][0]["description"],
-                "icono": datos_clima["weather"][0]["icon"]
-            }
+                            "ciudad": datos_clima["name"],
+                            "temperatura": datos_clima["main"]["temp"],
+                            "descripcion": datos_clima["weather"][0]["description"],
+                            "icono": datos_clima["weather"][0]["icon"]
+                        }
             return datos_filtrados
+        elif codigo == 401:
+            raise HTTPException(status_code=500, detail="Error del servicio, reinténtalo más tarde")
+        elif codigo == 404:
+            raise HTTPException(status_code=404, detail="Ciudad no encontrada")
+        elif codigo == 429:
+            raise HTTPException(status_code=429, detail="Demasiadas solicitudes, reinténtalo más tarde")
+        else:
+            raise HTTPException(status_code=503, detail="Error inesperado, reintenta la solicitud")
